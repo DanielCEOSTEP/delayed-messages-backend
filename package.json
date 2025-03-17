@@ -10,5 +10,7 @@
     "sequelize": "^6.28.0",
     "pg": "^8.9.0",
     "pg-hstore": "^2.3.4"
+      "bcrypt": "^5.1.0",
+  "jsonwebtoken": "^9.0.0"
   }
 }
