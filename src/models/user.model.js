@@ -1,7 +1,6 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../config/db.js';
 
-// Модель User (пользователь)
 export const User = sequelize.define('User', {
   id: {
     type: DataTypes.INTEGER,
@@ -15,7 +14,7 @@ export const User = sequelize.define('User', {
   },
   passwordHash: {
     type: DataTypes.STRING,
-    allowNull: true
+    allowNull: false
   }
 }, {
   tableName: 'users'
