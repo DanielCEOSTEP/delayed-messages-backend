@@ -1,16 +1,18 @@
 import express from 'express';
+import { connectDB } from './config/db.js';
 
 const app = express();
 
-// Простейший эндпоинт: GET /
+// Простейший маршрут для проверки
 app.get('/', (req, res) => {
-  res.send('Hello from Express on Railway!');
+  res.send('Hello from Express with PostgreSQL on Railway!');
 });
 
-// Получаем порт из переменной окружения или по умолчанию 3000
 const PORT = process.env.PORT || 3000;
 
-// Запускаем сервер
+// Подключаемся к БД, потом запускаем сервер
+await connectDB();
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
